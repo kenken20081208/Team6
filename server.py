@@ -49,6 +49,30 @@ def answer():
 
     
 
+    session["is_correct"] = result
+
+    if session["current_index"] >= 6:
+        return redirect("/result")
+
+    return redirect("/comment")
+
+@app.route("/comment")
+def comment():
+
+    quiz_list = session["quiz_list"]
+
+    current_index = session["current_index"]
+
+    question = quiz_list[current_index]
+
+    return render_template(
+        "comment.html",
+        question=question
+    )
+
+@app.route("/next", methods=["POST"])
+def next():
+
     session["current_index"] += 1
 
     if session["current_index"] >= 6:
@@ -58,8 +82,25 @@ def answer():
 
 @app.route("/result")
 def result():
-    
-    return render_template("result.html")
+    futoccho = session["futoccho_point"]
+    macho = session["macho_point"]
+    miss = session["miss_count"]
+
+    # 全問不正解
+    if miss == 6:
+        return render_template("result4.html")
+
+    # ふとっちょマインド
+    elif futoccho > macho:
+        return render_template("result1.html")
+
+    # マッチョマインド
+    elif macho > futoccho:
+        return render_template("result2.html")
+
+    # 同点
+    else:
+        return render_template("result3.html")
 
 
 if __name__ == "__main__":
