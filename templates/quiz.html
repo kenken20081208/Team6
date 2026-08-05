@@ -35,9 +35,23 @@
       ここに問題文が表示されます。
     </p>
 
-    <a class="button" href="/result">
-      仮の結果画面へ
-    </a>
+    <form action="/answer" method="POST">
+
+      <button
+          type="submit"
+          name="answer"
+          value="ふとっちょ">
+          ふとっちょ
+      </button>
+
+      <button
+          type="submit"
+          name="answer"
+          value="マッチョ">
+          マッチョ
+      </button>
+
+    </form>
   </main>
 </body>
 </html>
