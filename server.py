@@ -66,9 +66,6 @@ def answer():
 
     session["is_correct"] = result
 
-    if session["current_index"] >= 6:
-        return redirect("/result")
-
     return redirect("/comment")
 
 @app.route("/comment")
