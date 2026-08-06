@@ -1,14 +1,14 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
 <body>
-    <h1>答え</h1>
+    {% if is_correct %} <h1>正解！</h1> {% else %} <h1>不正解！</h1> {% endif %}
    <h2>解説</h2>
-   <p>{{ question.comment }}</p>
+   <p class="comment">{{ question.comment }}</p>
    <form action="/next" method="post">
     <button type="submit"> 次へ </button></form>
 </body>
