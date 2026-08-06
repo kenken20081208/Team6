@@ -1,0 +1,414 @@
+.result-page {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+.result-screen {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  min-height: 768px;
+  padding: 22px 64px 34px;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.result-label {
+  margin: 0;
+  text-align: center;
+  font-size: clamp(3rem, 4.2vw, 3.75rem);
+  line-height: 1;
+}
+
+.result-lead {
+  margin: 8px 0 4px;
+  padding-left: 36px;
+  text-align: left;
+  font-size: clamp(1.9rem, 2.8vw, 2.5rem);
+  line-height: 1.45;
+}
+
+.result-details {
+  position: relative;
+  z-index: 4;
+  width: min(660px, 66vw);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.result-title {
+  margin: 0 0 12px;
+  color: var(--color-main-red);
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  font-size: clamp(4rem, 7.7vw, 7.3rem);
+  font-weight: 900;
+  letter-spacing: 0.035em;
+  line-height: 1.12;
+  paint-order: stroke fill;
+  -webkit-text-stroke: 10px var(--color-white);
+  text-shadow: 0 0 1px var(--color-white);
+}
+
+.result-name {
+  display: flex;
+  min-height: 142px;
+  margin-top: -2px;
+  margin-bottom: 16px;
+  align-items: center;
+  justify-content: center;
+  color: #A52727;
+  font-weight: 400;
+  line-height: 1;
+  paint-order: stroke fill;
+  -webkit-text-stroke: 8px #FFFFFF;
+  text-shadow: 0 0 1px #FFFFFF;
+  white-space: nowrap;
+}
+
+.result-name--futoccho {
+  font-family: "Hachi Maru Pop", "Hiragino Maru Gothic ProN", cursive;
+  font-size: clamp(4.5rem, 8.6vw, 8rem);
+  letter-spacing: 0.02em;
+}
+
+.result-name--macho {
+  gap: 0.01em;
+  font-family: "Dela Gothic One", "Noto Sans JP", sans-serif;
+  font-size: clamp(4.5rem, 10vw, 9.5rem);
+  letter-spacing: -0.08em;
+}
+
+.result-name__char {
+  display: inline-block;
+}
+
+.result-name__char--1 {
+  transform: rotate(5deg) translateY(2px);
+}
+
+.result-name__char--2 {
+  transform: rotate(-8deg) translateY(8px);
+}
+
+.result-name__char--3 {
+  transform: rotate(3deg) translateY(-4px);
+}
+
+.result-name__char--4 {
+  transform: rotate(-3deg) translateY(6px);
+}
+
+.result-name--balance {
+  gap: 0.04em;
+  font-size: clamp(3.8rem, 7.5vw, 7rem);
+}
+
+.result-name__futo {
+  font-family: "Hachi Maru Pop", "Hiragino Maru Gothic ProN", cursive;
+  font-size: 1em;
+  font-weight: 400;
+  letter-spacing: -0.05em;
+}
+
+.result-name__macho {
+  display: inline-flex;
+  margin-left: 0.02em;
+  align-items: center;
+  font-family: "Dela Gothic One", "Noto Sans JP", sans-serif;
+  font-size: 0.84em;
+  font-weight: 400;
+  letter-spacing: -0.11em;
+}
+
+.result-title--karappo {
+  font-size: clamp(3.5rem, 5.2vw, 4.7rem);
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.result-description {
+  display: flex;
+  min-height: 198px;
+  margin: 0;
+  padding: 20px 46px;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  font-weight: 500;
+  line-height: 2;
+  text-align: center;
+}
+
+.result-description--balance {
+  min-height: 158px;
+}
+
+.result-score {
+  min-height: 86px;
+  margin: 10px 0 0;
+  padding: 11px 28px 12px;
+  font-size: clamp(0.95rem, 1.35vw, 1.15rem);
+  font-weight: 500;
+  line-height: 1.55;
+  text-align: center;
+}
+
+.result-restart {
+  width: min(460px, 82%);
+  min-height: 88px;
+  margin-top: 20px;
+  padding: 14px 28px;
+  font-size: clamp(1.75rem, 2.8vw, 2.5rem);
+  font-weight: 400;
+}
+
+.result-details--compact {
+  display: flex;
+  min-height: 540px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.result-details--compact .result-title {
+  margin-bottom: 40px;
+}
+
+.result-details--compact .result-score {
+  min-height: 120px;
+  padding-block: 20px;
+}
+
+.result-character {
+  position: absolute;
+  z-index: 3;
+  display: block;
+  height: auto;
+  pointer-events: none;
+  user-select: none;
+}
+
+.result-character--macho {
+  top: 56%;
+  left: 0;
+  width: min(34vw, 490px);
+}
+
+.result-character--futoccho {
+  top: 45%;
+  left: -125px;
+  width: min(55vw, 790px);
+}
+
+.result-character--balance-futoccho {
+  top: 55%;
+  left: -62px;
+  width: min(27vw, 380px);
+}
+
+.result-character--balance-macho {
+  top: 50%;
+  right: -24px;
+  width: min(24vw, 338px);
+}
+
+@media (max-width: 1024px) {
+  .result-screen {
+    min-height: 740px;
+    padding-inline: 44px;
+  }
+
+  .result-lead {
+    padding-left: 10px;
+  }
+
+  .result-details {
+    width: min(630px, 73vw);
+  }
+
+  .result-title {
+    -webkit-text-stroke-width: 8px;
+  }
+
+  .result-name {
+    -webkit-text-stroke-width: 7px;
+  }
+
+  .result-character--macho {
+    top: 60%;
+    left: -45px;
+    width: 330px;
+  }
+
+  .result-character--futoccho {
+    top: 64%;
+    left: -35px;
+    width: 300px;
+  }
+
+  .result-character--balance-futoccho {
+    left: -100px;
+    width: 300px;
+  }
+
+  .result-character--balance-macho {
+    right: -76px;
+    width: 260px;
+  }
+}
+
+@media (max-width: 768px) {
+  .result-page {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .result-screen {
+    min-height: 0;
+    padding: 24px 24px 34px;
+  }
+
+  .result-label {
+    font-size: 3rem;
+  }
+
+  .result-lead {
+    margin-top: 12px;
+    padding-left: 0;
+    font-size: clamp(1.45rem, 5.5vw, 2rem);
+  }
+
+  .result-details {
+    width: min(100%, 590px);
+  }
+
+  .result-title,
+  .result-name {
+    min-height: 0;
+    margin: 16px 0 20px;
+    white-space: normal;
+    -webkit-text-stroke-width: 7px;
+  }
+
+  .result-name--futoccho,
+  .result-name--macho {
+    font-size: clamp(3.25rem, 13vw, 5.5rem);
+    white-space: nowrap;
+  }
+
+  .result-name--balance,
+  .result-title--karappo {
+    font-size: clamp(3rem, 11vw, 4.75rem);
+  }
+
+  .result-name--balance {
+    white-space: nowrap;
+  }
+
+  .result-description {
+    min-height: 0;
+    padding: 22px 24px;
+    font-size: clamp(0.95rem, 3.7vw, 1.12rem);
+    line-height: 1.9;
+  }
+
+  .result-score {
+    padding: 14px 18px 16px;
+    font-size: clamp(0.88rem, 3.4vw, 1.05rem);
+  }
+
+  .result-restart {
+    width: min(84%, 420px);
+    min-height: 72px;
+    font-size: clamp(1.5rem, 6vw, 2rem);
+  }
+
+  .result-details--compact {
+    min-height: 510px;
+  }
+
+  .result-character--macho,
+  .result-character--futoccho,
+  .result-character--balance-futoccho,
+  .result-character--balance-macho {
+    top: auto;
+    bottom: -24px;
+    width: 170px;
+  }
+
+  .result-character--macho,
+  .result-character--futoccho,
+  .result-character--balance-futoccho {
+    left: -74px;
+  }
+
+  .result-character--balance-macho {
+    right: -74px;
+  }
+}
+
+@media (max-width: 480px) {
+  .result-screen {
+    padding: 20px 16px 30px;
+  }
+
+  .result-label {
+    font-size: 2.6rem;
+  }
+
+  .result-lead {
+    font-size: 1.25rem;
+  }
+
+  .result-title,
+  .result-name {
+    margin-block: 14px 18px;
+    -webkit-text-stroke-width: 5px;
+  }
+
+  .result-name--futoccho,
+  .result-name--macho {
+    font-size: clamp(2.65rem, 13vw, 3.75rem);
+  }
+
+  .result-name--balance,
+  .result-title--karappo {
+    font-size: clamp(2.35rem, 10.5vw, 3.1rem);
+  }
+
+  .result-description {
+    padding: 20px 14px;
+    font-size: 0.9rem;
+    line-height: 1.75;
+  }
+
+  .result-score {
+    padding-inline: 10px;
+    font-size: 0.82rem;
+  }
+
+  .result-restart {
+    width: 82%;
+    min-height: 64px;
+    margin-top: 18px;
+    font-size: 1.35rem;
+  }
+
+  .result-character--macho,
+  .result-character--futoccho,
+  .result-character--balance-futoccho,
+  .result-character--balance-macho {
+    bottom: -12px;
+    width: 132px;
+  }
+
+  .result-character--macho,
+  .result-character--futoccho,
+  .result-character--balance-futoccho {
+    left: -62px;
+  }
+
+  .result-character--balance-macho {
+    right: -64px;
+  }
+}

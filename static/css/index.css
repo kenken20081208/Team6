@@ -1,0 +1,319 @@
+.index-page {
+  display: block;
+  min-height: 100vh;
+  padding: 0;
+  overflow: hidden;
+}
+
+.index-stage {
+  position: relative;
+  display: grid;
+  min-height: 100vh;
+  padding: 54px 24px 78px;
+  place-items: center;
+  isolation: isolate;
+}
+
+.index-screen {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  width: min(1144px, calc(100vw - 280px));
+  min-height: 720px;
+  margin: 0;
+  padding: 0;
+  place-items: center;
+}
+
+.index-content {
+  display: flex;
+  width: min(920px, calc(100% - 80px));
+  padding-top: 28px;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.index-title {
+  display: flex;
+  margin: 0;
+  align-items: baseline;
+  justify-content: center;
+  color: var(--color-black, #000000);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.index-title__first {
+  display: inline-flex;
+  align-items: baseline;
+}
+
+.index-title__futoccho {
+  font-size: clamp(4rem, 6.75vw, 6.1rem);
+  font-weight: 700;
+  letter-spacing: -0.12em;
+  paint-order: stroke fill;
+  -webkit-text-stroke: 10px var(--color-white, #ffffff);
+}
+
+.index-title__connector {
+  position: relative;
+  z-index: 1;
+  margin: 0 0.08em 0 0.16em;
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  font-size: clamp(3.35rem, 5.65vw, 5.1rem);
+  font-weight: 400;
+}
+
+.index-title__macho {
+  display: inline-flex;
+  align-items: center;
+  font-size: clamp(3.9rem, 6.85vw, 6.2rem);
+  letter-spacing: -0.12em;
+  paint-order: stroke fill;
+  -webkit-text-stroke: 12px var(--color-white, #ffffff);
+}
+
+.index-title__macho span {
+  display: inline-block;
+}
+
+.index-title__macho span:nth-child(1) {
+  transform: rotate(2deg) translateY(2px);
+}
+
+.index-title__macho span:nth-child(2) {
+  transform: rotate(-7deg) translateY(7px);
+}
+
+.index-title__macho span:nth-child(3) {
+  transform: rotate(5deg) translateY(5px);
+}
+
+.index-title__macho span:nth-child(4) {
+  transform: rotate(7deg) translateY(10px);
+}
+
+.index-subtitle {
+  margin: 8px 0 0;
+  color: var(--color-black, #000000);
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  font-size: clamp(2rem, 3.1vw, 2.75rem);
+  font-weight: 500;
+  letter-spacing: 0.11em;
+  line-height: 1.2;
+  paint-order: stroke fill;
+  -webkit-text-stroke: 7px var(--color-white, #ffffff);
+}
+
+.index-description {
+  margin: 36px 0 0;
+  color: var(--color-black, #000000);
+  font-size: clamp(1.15rem, 1.7vw, 1.5rem);
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  line-height: 1.65;
+}
+
+.index-start-button {
+  display: flex;
+  width: min(690px, calc(100% - 84px));
+  min-height: 142px;
+  margin-top: 18px;
+  padding: 18px 40px;
+  align-items: center;
+  justify-content: center;
+  border-width: 7px;
+  font-size: clamp(2.25rem, 3.75vw, 3.25rem);
+  font-weight: 400;
+  line-height: 1;
+  box-shadow: 17px 18px 0 var(--color-black, #000000);
+}
+
+.index-start-button:hover {
+  color: var(--color-white, #ffffff);
+  background: var(--color-main-red, #A52727);
+  outline: 0;
+  transform: translateY(-3px);
+  box-shadow: 17px 21px 0 var(--color-black, #000000);
+}
+
+.index-start-button:active {
+  transform: translate(10px, 10px);
+  box-shadow: 7px 8px 0 var(--color-black, #000000);
+}
+
+.index-character {
+  position: absolute;
+  z-index: 1;
+  display: block;
+  max-width: none;
+  margin: 0;
+  opacity: 0.3;
+  pointer-events: none;
+  user-select: none;
+}
+
+.index-character--futoccho {
+  top: 30px;
+  left: -250px;
+  width: 850px;
+  height: auto;
+}
+
+.index-character--macho {
+  top: 106px;
+  right: -200px;
+  width: auto;
+  height: 835px;
+}
+
+@media (max-width: 1199px) {
+  .index-stage {
+    padding: 44px 48px 66px;
+  }
+
+  .index-screen {
+    width: min(900px, calc(100vw - 96px));
+    min-height: 680px;
+  }
+
+  .index-character--futoccho {
+    top: 70px;
+    left: -210px;
+    width: 680px;
+  }
+
+  .index-character--macho {
+    top: 112px;
+    right: -102px;
+    height: 720px;
+  }
+}
+
+@media (max-width: 768px) {
+  .index-page {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .index-stage {
+    min-height: 100svh;
+    padding: 28px 22px 38px;
+  }
+
+  .index-screen {
+    width: 100%;
+    min-height: min(660px, calc(100svh - 66px));
+    padding: 54px 24px 60px;
+  }
+
+  .index-content {
+    width: 100%;
+    padding-top: 0;
+  }
+
+  .index-title {
+    gap: 10px;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .index-title__futoccho {
+    font-size: clamp(2.8rem, 14vw, 4.1rem);
+    -webkit-text-stroke-width: 7px;
+  }
+
+  .index-title__connector {
+    font-size: clamp(2.2rem, 11vw, 3.4rem);
+  }
+
+  .index-title__macho {
+    font-size: clamp(3rem, 15vw, 4.25rem);
+    -webkit-text-stroke-width: 8px;
+  }
+
+  .index-subtitle {
+    margin-top: 15px;
+    font-size: clamp(1.6rem, 7.5vw, 2.3rem);
+    -webkit-text-stroke-width: 5px;
+  }
+
+  .index-description {
+    margin-top: 34px;
+    font-size: clamp(0.95rem, 4.5vw, 1.2rem);
+    letter-spacing: 0.04em;
+  }
+
+  .index-start-button {
+    width: calc(100% - 18px);
+    min-height: 92px;
+    margin-top: 28px;
+    padding: 14px 24px;
+    border-width: 4px;
+    font-size: clamp(2rem, 10vw, 2.75rem);
+    box-shadow: 10px 11px 0 var(--color-black, #000000);
+  }
+
+  .index-start-button:hover {
+    box-shadow: 10px 14px 0 var(--color-black, #000000);
+  }
+
+  .index-start-button:active {
+    transform: translate(6px, 6px);
+    box-shadow: 4px 5px 0 var(--color-black, #000000);
+  }
+
+  .index-character {
+    opacity: 0.14;
+  }
+
+  .index-character--futoccho {
+    top: auto;
+    bottom: 12px;
+    left: -118px;
+    width: 360px;
+  }
+
+  .index-character--macho {
+    top: 72px;
+    right: -84px;
+    height: 520px;
+  }
+}
+
+@media (max-width: 430px) {
+  .index-stage {
+    padding: 18px 16px 28px;
+  }
+
+  .index-screen {
+    min-height: calc(100svh - 46px);
+    padding: 44px 18px 48px;
+  }
+
+  .index-title__futoccho {
+    font-size: 2.75rem;
+  }
+
+  .index-title__connector {
+    font-size: 2.25rem;
+  }
+
+  .index-title__macho {
+    font-size: 3rem;
+  }
+
+  .index-description {
+    font-size: 0.98rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .index-start-button,
+  .index-screen {
+    animation: none;
+    transition: none;
+  }
+}

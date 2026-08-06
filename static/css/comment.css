@@ -1,4 +1,307 @@
-.comment,
-.question{
-    white-space: pre-line;
+.comment-page {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+}
+
+.comment-screen {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  width: min(1224px, calc(100vw - 200px));
+  min-height: min(768px, calc(100vh - 132px));
+  margin: 0 auto;
+  padding: 27px clamp(40px, 6.5vw, 92px) 34px;
+  flex-direction: column;
+  overflow: visible;
+}
+
+.comment-header {
+  position: relative;
+  z-index: 3;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: center;
+}
+
+.comment-kicker {
+  grid-column: 1;
+  margin: 0;
+  justify-self: start;
+  color: var(--color-black, #000000);
+  font-family: "Dela Gothic One", "Noto Sans JP", sans-serif;
+  font-size: clamp(35px, 4.2vw, 58px);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.comment-progress {
+  grid-column: 2;
+  margin: 0;
+  color: var(--color-black, #000000);
+  font-family: "Bebas Neue", Impact, sans-serif;
+  font-size: clamp(44px, 4vw, 58px);
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0;
+}
+
+.comment-progress span {
+  font-variant-numeric: tabular-nums;
+}
+
+.comment-main {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex: 1;
+  align-items: center;
+  flex-direction: column;
+}
+
+.comment-result {
+  margin: 42px 0 10px;
+  color: var(--color-main-red, #a52727);
+  font-family: "Dela Gothic One", "Noto Sans JP", sans-serif;
+  font-size: clamp(92px, 10.5vw, 150px);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: 0.02em;
+  paint-order: stroke fill;
+  -webkit-text-stroke: 13px var(--color-white, #ffffff);
+  text-shadow: 0 1px 0 var(--color-white, #ffffff);
+}
+
+.comment-content {
+  width: min(660px, 100%);
+  transform: translateX(22px);
+}
+
+.comment-content .comment {
+  display: grid;
+  min-height: 200px;
+  margin: 0;
+  padding: 28px 38px;
+  place-items: center;
+  color: var(--color-white, #ffffff);
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  font-size: clamp(22px, 2.25vw, 31px);
+  font-weight: 800;
+  line-height: 1.48;
+  text-align: center;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.comment-punchline {
+  min-height: 86px;
+  margin: 12px 0 0;
+  padding: 20px 32px;
+  color: var(--color-black, #000000);
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  font-size: clamp(20px, 1.9vw, 27px);
+  font-weight: 500;
+  line-height: 1.55;
+  text-align: center;
+  white-space: pre-line;
+  overflow-wrap: anywhere;
+}
+
+.comment-next-form {
+  width: min(460px, 100%);
+  margin: 20px 0 0;
+  transform: translateX(22px);
+}
+
+.comment-next-button {
+  width: 100%;
+  min-height: 104px;
+  margin: 0;
+  padding: 14px 30px;
+  color: var(--color-white, #ffffff);
+  background: var(--color-main-red, #a52727);
+  border: 7px solid var(--color-black, #000000);
+  border-radius: 999px;
+  box-shadow: 9px 10px 0 var(--color-black, #000000);
+  font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN", "Yu Gothic", sans-serif;
+  font-size: clamp(32px, 3vw, 43px);
+  font-weight: 400;
+  line-height: 1.2;
+}
+
+.comment-character {
+  position: absolute;
+  z-index: 2;
+  bottom: 0;
+  left: 0;
+  height: auto;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+.comment-character--futoccho {
+  bottom: -160px;
+  left: 88px;
+  width: 440px;
+}
+
+.comment-character--macho {
+  bottom: -495px;
+  left: -122px;
+  width: 440px;
+}
+
+@media (max-width: 1100px) {
+  .comment-screen {
+    width: 100%;
+    min-height: calc(100vh - 100px);
+    margin: 0 auto;
+    padding-right: 46px;
+    padding-left: 46px;
+  }
+
+  .comment-result {
+    margin-top: 34px;
+  }
+
+  .comment-content,
+  .comment-next-form {
+    transform: translateX(38px);
+  }
+
+  .comment-character--futoccho {
+    left: -24px;
+    width: 390px;
+  }
+
+  .comment-character--macho {
+    bottom: -350px;
+    left: -141px;
+    width: 390px;
+  }
+}
+
+@media (max-width: 768px) {
+  .comment-page {
+    overflow-x: hidden;
+    overflow-y: auto;
+  }
+
+  .comment-screen {
+    width: 100%;
+    min-height: 0;
+    margin: 0 auto;
+    padding: 28px 30px 44px;
+  }
+
+  .comment-kicker {
+    font-size: 38px;
+  }
+
+  .comment-progress {
+    font-size: 43px;
+  }
+
+  .comment-result {
+    margin: 47px 0 18px;
+    font-size: 105px;
+    -webkit-text-stroke-width: 10px;
+  }
+
+  .comment-content,
+  .comment-next-form {
+    transform: none;
+  }
+
+  .comment-content .comment {
+    min-height: 180px;
+    padding: 28px 30px;
+    font-size: 24px;
+  }
+
+  .comment-next-button {
+    min-height: 90px;
+    border-width: 5px;
+    font-size: 35px;
+  }
+
+  .comment-character {
+    opacity: 0.22;
+  }
+
+  .comment-character--futoccho {
+    bottom: -32px;
+    left: -125px;
+    width: 300px;
+  }
+
+  .comment-character--macho {
+    bottom: -235px;
+    left: -105px;
+    width: 280px;
+  }
+}
+
+@media (max-width: 560px) {
+  .comment-screen {
+    width: 100%;
+    margin: 0 auto;
+    padding: 22px 16px 34px;
+  }
+
+  .comment-header {
+    grid-template-columns: 1fr auto;
+  }
+
+  .comment-kicker {
+    font-size: 29px;
+  }
+
+  .comment-progress {
+    grid-column: 2;
+    font-size: 31px;
+  }
+
+  .comment-result {
+    margin: 40px 0 19px;
+    font-size: clamp(68px, 22vw, 88px);
+    -webkit-text-stroke-width: 8px;
+  }
+
+  .comment-content .comment {
+    min-height: 0;
+    padding: 24px 18px;
+    font-size: clamp(18px, 5vw, 21px);
+    line-height: 1.55;
+  }
+
+  .comment-punchline {
+    min-height: 76px;
+    padding: 17px 16px;
+    font-size: clamp(17px, 4.6vw, 20px);
+  }
+
+  .comment-next-form {
+    width: min(290px, calc(100% - 28px));
+    margin-top: 22px;
+  }
+
+  .comment-next-button {
+    min-height: 74px;
+    border-width: 4px;
+    box-shadow: 6px 7px 0 var(--color-black, #000000);
+    font-size: 28px;
+  }
+
+  .comment-character {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .comment-next-button {
+    transition: none;
+  }
 }

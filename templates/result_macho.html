@@ -2,49 +2,47 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>結果画面</title>
-
-  <link
-    rel="stylesheet"
-    href="/static/css/common.css"
-  >
-
-  <link
-    rel="stylesheet"
-    href="/static/css/result.css"
-  >
+  <link rel="stylesheet" href="/static/css/common.css">
+  <link rel="stylesheet" href="/static/css/result.css">
 </head>
 
-<body>
-  <main class="screen">
-    <p class="label">
-      結果画面
-    </p>
+<body class="result-page result-page--macho">
+  <img
+    class="character result-character result-character--macho"
+    src="/static/images/macho-character.png"
+    alt="マッチョの人物"
+  >
 
-    <h1>
-      マッチョマインド
-    </h1>
+  <main class="screen result-screen">
+    <p class="label result-label">RESULT</p>
 
-    <p>
-    ストイックでブレない、強靭なマインドの持ち主！<br>
-    物事を力強く捉え、自分の軸をしっかり持って突き進む圧倒的パワーがあります。周囲の雑音に惑わされないパワフルな思考ですが、たまには肩の力を抜いて柔軟に行くのもアリ！
-  </p>
+    <p class="result-lead">あなたのマインドは――。</p>
 
-    <p>
-      ふとっちょ正解数：{{ futoccho_point }}問<br>
-      マッチョ正解数：{{ macho_point }}問<br>
-      合計正解数：{{ total_correct }} / {{ total_questions }}問
-    </p>
+    <div class="result-details">
+      <h1 class="result-name result-name--macho" aria-label="マッチョ">
+        <span class="result-name__char result-name__char--1" aria-hidden="true">マ</span>
+        <span class="result-name__char result-name__char--2" aria-hidden="true">ッ</span>
+        <span class="result-name__char result-name__char--3" aria-hidden="true">チ</span>
+        <span class="result-name__char result-name__char--4" aria-hidden="true">ョ</span>
+      </h1>
 
-    <a class="button" href="/">
-      もう一度遊ぶ？
-    </a>
+      <p class="orange-panel result-description">
+        ストイックでブレない、強靭なマインドの持ち主！<br>
+        物事を力強く捉え、自分の軸をしっかり持って突き進む圧倒的パワーがあります。周囲の雑音に惑わされないパワフルな思考ですが、たまには肩の力を抜いて柔軟に行くのもアリ！
+      </p>
+
+      <p class="speech-bubble result-score">
+        ふとっちょ正解数：{{ futoccho_point }}問<br>
+        マッチョ正解数：{{ macho_point }}問<br>
+        合計正解数：{{ total_correct }} / {{ total_questions }}問
+      </p>
+
+      <a class="button result-restart" href="/">
+        もう一度遊ぶ？
+      </a>
+    </div>
   </main>
 </body>
 </html>

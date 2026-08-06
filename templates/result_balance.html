@@ -2,44 +2,53 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1.0"
-  >
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>結果画面</title>
-
-  <link
-    rel="stylesheet"
-    href="/static/css/common.css"
-  >
-
-  <link
-    rel="stylesheet"
-    href="/static/css/result.css"
-  >
+  <link rel="stylesheet" href="/static/css/common.css">
+  <link rel="stylesheet" href="/static/css/result.css">
 </head>
 
-<body>
-  <main class="screen">
-    <p class="label">
-      RESULT
-    </p>
+<body class="result-page result-page--balance">
+  <img
+    class="character result-character result-character--balance-futoccho"
+    src="/static/images/futoccho-character.png"
+    alt="ふとっちょの人物"
+  >
+  <img
+    class="character result-character result-character--balance-macho"
+    src="/static/images/macho-character.png"
+    alt="マッチョの人物"
+  >
 
-    <h1>
-      結果画面
-    </h1>
+  <main class="screen result-screen">
+    <p class="label result-label">RESULT</p>
 
-    <p>
-      ふとっちょ正解数：{{ futoccho_point }}問<br>
-      マッチョ正解数：{{ macho_point }}問<br>
-      合計正解数：{{ total_correct }} / {{ total_questions }}問
-    </p>
+    <p class="result-lead">あなたのマインドは――。</p>
 
-    <a class="button" href="/">
-      もう一度遊ぶ？
-    </a>
+    <div class="result-details">
+      <h1 class="result-name result-name--balance" aria-label="ふとマッチョ">
+        <span class="result-name__futo">ふと</span>
+        <span class="result-name__macho" aria-hidden="true">
+          <span class="result-name__char result-name__char--1">マ</span>
+          <span class="result-name__char result-name__char--2">ッ</span>
+          <span class="result-name__char result-name__char--3">チ</span>
+          <span class="result-name__char result-name__char--4">ョ</span>
+        </span>
+      </h1>
+
+      <p class="orange-panel result-description result-description--balance">
+        ふとっちょ正解数：{{ futoccho_point }}問<br>
+        マッチョ正解数：{{ macho_point }}問
+      </p>
+
+      <p class="speech-bubble result-score">
+        合計正解数：{{ total_correct }} / {{ total_questions }}問
+      </p>
+
+      <a class="button result-restart" href="/">
+        もう一度遊ぶ？
+      </a>
+    </div>
   </main>
 </body>
 </html>

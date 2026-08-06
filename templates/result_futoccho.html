@@ -1,45 +1,47 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>マインド結果
-    </title>
-   
-    <link rel="stylesheet" 
-    href="/static/css/common.css">
-   
-    <link rel="stylesheet" 
-    href="/static/css/result.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>マインド結果</title>
+  <link rel="stylesheet" href="/static/css/common.css">
+  <link rel="stylesheet" href="/static/css/result.css">
 </head>
-<body>
-    <main class="screen">
-    <p class="label">
-      RESULT
-    </p>
 
-    <h1>
-      あなたのマインドは――。
-    </h1>
+<body class="result-page result-page--futoccho">
+  <img
+    class="character result-character result-character--futoccho"
+    src="/static/images/futoccho-character.png"
+    alt="ふとっちょの人物"
+  >
 
-    <h2>
+  <main class="screen result-screen">
+    <p class="label result-label">RESULT</p>
+
+    <p class="result-lead">あなたのマインドは――。</p>
+
+    <div class="result-details">
+      <h1 class="result-name result-name--futoccho">
         ふとっちょ
-    </h2>
-    <p>
-        食事量や生活習慣から、
- ふとっちょの気配を素早く察知するタイプ。
-  ただし、増量期のマッチョまで 
-ふとっちょ扱いすることがあります。
-    </p>
-    <p>
-      ふとっちょ正解数：{{ futoccho_point }}問<br>
-      マッチョ正解数：{{ macho_point }}問<br>
-      合計正解数：{{ total_correct }} / {{ total_questions }}問
-    </p>
-    <a class="button" href="/">
-      もう一度遊ぶ？
-    </a>
+      </h1>
+
+      <p class="orange-panel result-description">
+        食事量や生活習慣から、<br>
+        ふとっちょの気配を素早く察知するタイプ。<br>
+        ただし、増量期のマッチョまで<br>
+        ふとっちょ扱いすることがあります。
+      </p>
+
+      <p class="speech-bubble result-score">
+        ふとっちょ正解数：{{ futoccho_point }}問<br>
+        マッチョ正解数：{{ macho_point }}問<br>
+        合計正解数：{{ total_correct }} / {{ total_questions }}問
+      </p>
+
+      <a class="button result-restart" href="/">
+        もう一度遊ぶ？
+      </a>
+    </div>
   </main>
-    
 </body>
 </html>

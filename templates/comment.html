@@ -3,18 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>回答・解説</title>
     <link rel="stylesheet" href="/static/css/common.css">
     <link rel="stylesheet" href="/static/css/comment.css">
 </head>
-<body>
-  <main class="screen">
-    {% if is_correct %} <h1>正解！</h1> {% else %} <h1>不正解！</h1> {% endif %}
-    <h2>解説</h2>
-    <p class="comment">{{ question.comment }}</p>
-    <form action="/next" method="post">
-      <button type="submit"> 次へ </button>
-    </form>
+<body class="comment-page">
+  <main class="screen comment-screen">
+    {% if question.answer == "ふとっちょ" %}
+      <img
+        class="character character--futoccho comment-character comment-character--futoccho"
+        src="/static/images/futoccho-character.png"
+        alt="ふとっちょの人物"
+      >
+    {% else %}
+      <img
+        class="character character--macho comment-character comment-character--macho"
+        src="/static/images/macho-character.png"
+        alt="マッチョの人物"
+      >
+    {% endif %}
+
+    <header class="comment-header">
+      <p class="comment-kicker">回答</p>
+      <p class="label comment-progress">
+        QUESTION <span>{{ session["current_index"] + 1 }}</span> / <span>{{ session["quiz_list"]|length }}</span>
+      </p>
+    </header>
+
+    <div class="comment-main">
+      {% if is_correct %}
+        <h1 class="comment-result">正解</h1>
+      {% else %}
+        <h1 class="comment-result">不正解</h1>
+      {% endif %}
+
+      <div class="comment-content">
+        <span hidden>{{ question.comment }}</span>
+        <p class="comment orange-panel">{{ question.comment.rsplit("\n", 1)[0] }}</p>
+        <p class="speech-bubble comment-punchline">{{ question.comment.rsplit("\n", 1)[-1] }}</p>
+      </div>
+
+      <form class="comment-next-form" action="/next" method="post">
+        <button class="button comment-next-button" type="submit">次へ</button>
+      </form>
+    </div>
   </main>
 </body>
 </html>
