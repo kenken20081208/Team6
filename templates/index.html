@@ -8,7 +8,7 @@
     content="width=device-width, initial-scale=1.0"
   >
 
-  <title>ふとっちょか、マッチョか。</title>
+  <title>ふとっちょかマッチョかマインダー</title>
 
   <link
     rel="stylesheet"
@@ -21,25 +21,47 @@
   >
 </head>
 
-<body>
-  <main class="screen">
-    <p class="label">
-      偏見測定クイズ
-    </p>
+<body class="index-page">
+  <main class="index-stage">
+    <img
+      class="character character--futoccho index-character index-character--futoccho"
+      src="/static/images/futoccho-character.png"
+      alt=""
+      aria-hidden="true"
+    >
 
-    <h1>
-      ふとっちょか、<br>
-      マッチョか。
-    </h1>
+    <img
+      class="character character--macho index-character index-character--macho"
+      src="/static/images/macho-character.png"
+      alt=""
+      aria-hidden="true"
+    >
 
-    <p>
-      生活習慣だけを見て、<br>
-      架空人物の正体を見抜こう。
-    </p>
+    <section class="screen index-screen" aria-labelledby="app-title">
+      <div class="index-content">
+        <h1 id="app-title" class="index-title" aria-label="ふとっちょかマッチョ">
+          <span class="index-title__first" aria-hidden="true">
+            <span class="font-futoccho index-title__futoccho">ふとっちょ</span>
+            <span class="index-title__connector">か</span>
+          </span>
 
-    <a class="button" href="/start">
-      クイズを始める
-    </a>
+          <span class="font-macho index-title__macho" aria-hidden="true">
+            <span>マ</span><span>ッ</span><span>チ</span><span>ョ</span>
+          </span>
+        </h1>
+
+        <p class="index-subtitle">マインダー</p>
+
+        <p class="index-description">
+          あなたのマインドは<br>
+          ふとっちょかマッチョかー。
+        </p>
+
+        <a class="button index-start-button" href="/start">
+          開始
+        </a>
+      </div>
+    </section>
   </main>
 </body>
 </html>

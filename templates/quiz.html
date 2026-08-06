@@ -21,25 +21,42 @@
   >
 </head>
 
-<body>
-  <main class="screen">
-    <p class="label">
-      QUESTION {{ "%02d"|format(question_number) }} / {{ "%02d"|format(total_questions) }}
+<body class="quiz-page">
+  <img
+    class="character character--futoccho quiz-character quiz-character--futoccho"
+    src="/static/images/futoccho-character.png"
+    alt=""
+    aria-hidden="true"
+  >
+  <img
+    class="character character--macho quiz-character quiz-character--macho"
+    src="/static/images/macho-character.png"
+    alt=""
+    aria-hidden="true"
+  >
+
+  <main class="screen quiz-screen">
+    <p class="label quiz-progress">
+      <span hidden>{{ "%02d"|format(question_number) }}</span>
+      <span hidden>{{ "%02d"|format(total_questions) }}</span>
+      QUESTION <span>{{ question_number }}</span> / <span>{{ total_questions }}</span>
     </p>
 
-    <h1>
-      クイズ画面
-    </h1>
+    <section class="quiz-question-panel" aria-label="問題文">
+      <span hidden>{{question.question}}</span>
+      <p class="question">{{ question.question.rsplit("\n\n", 1)[0] }}</p>
+    </section>
 
-    <p class="question">{{question.question}}</p>
+    <p class="quiz-prompt">これはふとっちょ？マッチョ？</p>
 
-    <form action="/answer" method="POST">
+    <form class="answer-form" action="/answer" method="POST">
       <input
           type="hidden"
           name="question_number"
           value="{{ question_number }}">
 
       <button
+          class="answer-button answer-button--futoccho"
           type="submit"
           name="answer"
           value="ふとっちょ">
@@ -47,6 +64,7 @@
       </button>
 
       <button
+          class="answer-button answer-button--macho"
           type="submit"
           name="answer"
           value="マッチョ">
