@@ -24,7 +24,7 @@
 <body>
   <main class="screen">
     <p class="label">
-      QUESTION 01
+      QUESTION {{ "%02d"|format(question_number) }} / {{ "%02d"|format(total_questions) }}
     </p>
 
     <h1>
@@ -34,6 +34,10 @@
     <p class="question">{{question.question}}</p>
 
     <form action="/answer" method="POST">
+      <input
+          type="hidden"
+          name="question_number"
+          value="{{ question_number }}">
 
       <button
           type="submit"

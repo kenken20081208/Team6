@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="/static/css/common.css">
+    <link rel="stylesheet" href="/static/css/comment.css">
 </head>
 <body>
+  <main class="screen">
     {% if is_correct %} <h1>正解！</h1> {% else %} <h1>不正解！</h1> {% endif %}
-   <h2>解説</h2>
-   <p class="comment">{{ question.comment }}</p>
-   <form action="/next" method="post">
-    <button type="submit"> 次へ </button></form>
+    <h2>解説</h2>
+    <p class="comment">{{ question.comment }}</p>
+    <form action="/next" method="post">
+      <button type="submit"> 次へ </button>
+    </form>
+  </main>
 </body>
 </html>
